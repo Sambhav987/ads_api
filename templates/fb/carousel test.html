@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} Test page {% endblock title %}
+
+
+{% block body %} <h1>This is a test page using template</h1>
+
+<div class="container my-4">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/image.jfif" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/image_2.jfif" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/image_3.jfif" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum corrupti blanditiis cumque vitae beatae rerum quae et
+    sequi optio repellendus dignissimos ab modi vel minus animi quam, quisquam dolores ea? Fugiat dolorum quod doloribus
+    adipisci quae inventore amet, blanditiis omnis corporis ab natus praesentium hic quasi dolor, perspiciatis, neque
+    rerum labore suscipit et debitis vero! Nesciunt facilis iure itaque laboriosam quibusdam quae pariatur consequatur
+    aliquid ad. Laboriosam similique tempora reprehenderit consectetur excepturi eligendi, ab inventore placeat nihil
+    dolores, pariatur itaque officiis enim unde quasi consequuntur veniam magnam blanditiis tenetur ratione hic cum
+    dolorem aut. Distinctio consectetur veritatis laboriosam. Quas, labore.</p>
+
+<p>Trying varible: <br>
+    vaar = <b>{{var}}</b>
+</p>
+
+
+{% endblock body %}

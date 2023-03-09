@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Test page {% endblock title %}
+
+{% block head %}
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '603141541175725',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v16.0'
+      });
+    };
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+{% endblock head %}
+
+{% block body %}
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0&appId=603141541175725&autoLogAppEvents=1" nonce="iRSWFgWf"></script>
+
+<div class="container py-4">
+
+<h1>Facebook Ads Data from your account</h1>
+
+
+<p>To get the data from your Facebook Marketplace account, please first login with your facebook account.</p>
+
+
+<div class="fb-login-button" data-width="1000" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+<br> <br><br>
+<a href="/fb/dashboard">
+<button type="button" class="btn btn-primary btn-lg" >Go to Dashboard</button>
+</a>
+
+
+<script>
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+console.log(FB.getLoginStatus(function(response) {
+  statusChangeCallback(response);
+});)
+</script>
+
+</div>
+
+{% endblock body %}
