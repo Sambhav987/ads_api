@@ -4,52 +4,78 @@
 
 {% block head %}
 <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId            : '603141541175725',
-        autoLogAppEvents : true,
-        xfbml            : true,
-        version          : 'v16.0'
-      });
-    };
-  </script>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+  window.fbAsyncInit = function () {
+    FB.init({
+      appId: '603141541175725',
+      autoLogAppEvents: true,
+      xfbml: true,
+      version: 'v16.0'
+    });
+  };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 {% endblock head %}
 
 {% block body %}
 
 
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0&appId=603141541175725&autoLogAppEvents=1" nonce="iRSWFgWf">
-</script>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0&appId=603141541175725&autoLogAppEvents=1"
+  nonce="iRSWFgWf">
+  </script>
 
 
 <button type="button" onclick="logConsole()">LOG</button>
-
+<div id="status"></div>
 <script>
-   function logConsole(){
-      console.log("Following are some animal names");
-      var Arr1 = FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
+
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me', function (response) {
+        console.log('Successful login for: ' + response.name);
+        document.getElementById('status').innerHTML =
+          'Thanks for logging in, ' + response.name + '!';
+      });
+    } else {
+      // The person is not logged into your app or we are unable to tell.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    }
+  }
+
+  function logConsole() {
+    console.log("Following are some animal names");
+    var Arr1 = FB.getLoginStatus(function (response) {
+      statusChangeCallback(response);
     });
-      console.log(Arr1);
-   }
+    console.log(Arr1);
+  }
 </script>
 
 
 <div class="container py-4">
-<h1>Facebook Ads Data from your account</h1>
+  <h1>Facebook Ads Data from your account</h1>
 
 
-<p>To get the data from your Facebook Marketplace account, please first login with your facebook account.</p>
+  <p>To get the data from your Facebook Marketplace account, please first login with your facebook account.</p>
 
 
-<div class="fb-login-button" data-width="1000" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
+  <div class="fb-login-button" data-width="1000" data-size="large" data-button-type="login_with" data-layout="rounded"
+    data-auto-logout-link="false" data-use-continue-as="false"></div>
 
-<br> <br><br>
-<a href="/fb/dashboard">
-<button type="button" class="btn btn-secondary btn-lg" >Go to Dashboard</button>
-</a>
+  <br> <br><br>
+  <a href="/fb/dashboard">
+    <button type="button" class="btn btn-secondary btn-lg">Go to Dashboard</button>
+  </a>
 
 
 </div>
