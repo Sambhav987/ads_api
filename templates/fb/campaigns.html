@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Dashboard{% endblock title %}
+
+
+{% block body %}
+
+<div class="container my-2">
+    <h1>User: {{user.email}}</h1>
+    Access Token: {{user.access_token}}
+    <br><br>
+    Campaigns of {{user.email}} : {{insights}}
+
+    <ul>
+        {% for campaign in campaigns %}
+        <li> {{campaign}} </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock body %}

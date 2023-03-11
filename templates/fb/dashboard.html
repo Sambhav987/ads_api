@@ -7,16 +7,14 @@
 {% block body %}
 
 <div class="container my-2">
-    <h1>User: {{user.email}}</h1>
-    Access Token: {{user.access_token}}
-    <br><br>
-    Campaigns of {{user.email}} : {{insights}}
+     <h1>Welcome!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <a href="/fb/campaigns"> <button type="button" class="btn btn-primary">Click here to see your campaigns</button></a>
 
-    <ul>
-        {% for campaign in campaigns %}
-        <li> {{campaign}} </li>
-        {% endfor %}
-    </ul>
 </div>
 
 
