@@ -143,7 +143,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'home'
 LOGIN_REDIRECT_URL = 'dashboard'
-LOGOUT_URL = 'home'
+LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'home'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '603141541175725' # App ID
