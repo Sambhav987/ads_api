@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +102,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+  'social_core.backends.facebook.FacebookOAuth2',
+  'social_core.backends.linkedin.LinkedinOAuth2',
+  'social_core.backends.instagram.InstagramOAuth2',
+  'django.contrib.auth.backends.ModelBackend',
+]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -129,3 +137,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_URL = 'home'
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGOUT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '603141541175725' # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'd4fc777f77ecc1fed686784ec855c42e' # App Secret'

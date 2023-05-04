@@ -60,6 +60,7 @@
 
   <p>To get the data from your Facebook Marketplace account, please first login with your facebook account.</p>
 
+  
 
   <div class="fb-login-button" data-width="1000" data-size="large" data-button-type="login_with" data-layout="rounded"
     data-auto-logout-link="false" data-use-continue-as="false" onclick="FB.login(function(response){console.log("Login Success for " + response.name)})"></div>
@@ -69,6 +70,11 @@
   <a href="/fb/dashboard">
     <button type="button" class="btn btn-secondary btn-lg">Go to Dashboard</button>
   </a>
+
+
+  <button class="btn btn-primary mb-2">
+    <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+    </button>
 
 
 </div>
