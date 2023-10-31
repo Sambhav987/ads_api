@@ -1,1 +1,1 @@
-I am trying to make something here using the Ads API of Google Ads, Facebook Ads, Amazon Seller Central, and more
+I'm working on a project that utilizes the Ads APIs of Google Ads, Facebook Ads, Amazon Seller Central, and various other platforms.
